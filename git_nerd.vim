@@ -1,16 +1,16 @@
 if exists("g:loaded_nerdtree_git_nerd")
   finish
 endif
-let g:loaded_nerdtree_git_nerd = 1
-let g:NERDTree_before_render = 1
+let g:loaded_nerdtree_git_nerd=1
+let g:NERDTreePrefix=1
+let g:NERDTreeBeforeRender=1
 
-let NERDTreeCustomPrefix=1
 
-function g:nerd_tree_custom_before_render()
+function plugin:NERDTreeBeforeRender()
     let s:git_cached_status = ''
 endfunction
 
-function g:getCustomPrefix(path)
+function plugin:NERDTreePrefix(path)
 
   if !exists('s:git_cached_status') || s:git_cached_status == ''
     echomsg "Resetting the cached status"
