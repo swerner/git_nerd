@@ -22,4 +22,3 @@ with replacing your NERD\_tree.vim with the one from my fork and you'll
 be good to go.
 
 
-
