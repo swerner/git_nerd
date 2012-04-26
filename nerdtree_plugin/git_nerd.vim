@@ -5,8 +5,6 @@ let g:loaded_nerdtree_git_nerd=1
 let g:NERDTreePrefix=1
 let g:NERDTreeBeforeRender=1
 let NERDTreeChDirMode=2
-autocmd BufWrite * NERDTreeRender()
-
 
 function plugin:NERDTreeBeforeRender()
     let g:git_cached_status = ''
@@ -20,7 +18,6 @@ function plugin:NERDTreePrefix(path)
 
   let s:path_position = stridx(g:git_cached_status, a:path.cachedDisplayString)
   if(s:path_position > 0)
-    
     let s:git_staged_position = stridx(g:git_cached_status, "Changes to be committed")
     let s:git_unstaged_position = stridx(g:git_cached_status, "Changes not staged for commit")
 
